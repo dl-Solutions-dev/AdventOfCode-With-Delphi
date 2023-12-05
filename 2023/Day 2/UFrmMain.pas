@@ -53,7 +53,6 @@ var
   wCouleur : TArray< string >;
   wGameOk : Boolean;
   wSomme : Integer;
-  wF : TextFile;
 begin
   F := TFile.ReadAllLines( FILENAME );
 
@@ -79,17 +78,10 @@ begin
     if wGameOk then
     begin
       wSomme := wSomme + ( i + 1 );
-      Writeln( wF, 'Game : ' + ( i + 1 ).ToString + ' ok. Somme = ' + wSomme.ToString );
-    end
-    else
-    begin
-      Writeln( wF, 'Game : ' + ( i + 1 ).ToString + ' KO' );
     end;
   end;
 
   Edt1.Text := wSomme.ToString;
-
-  CloseFile( wF );
 end;
 
 procedure TFrmMain.Exercice2;
@@ -104,39 +96,42 @@ begin
   F := TFile.ReadAllLines( FILENAME );
 
   wMaxCouleur := TObjectDictionary< string, Integer >.Create;
-
-  wSomme := 0;
-  for var i := 0 to High( F ) do
-  begin
-    wGame := F[ i ].Split( [ ':', ';', ',' ] );
-
-    for var j := 1 to High( wGame ) do
+  try
+    wSomme := 0;
+    for var i := 0 to High( F ) do
     begin
-      wCouleur := wGame[ j ].Trim.Split( [ ' ' ] );
-      if wMaxCouleur.ContainsKey( wCouleur[ 1 ] ) then
+      wGame := F[ i ].Split( [ ':', ';', ',' ] );
+
+      for var j := 1 to High( wGame ) do
       begin
-        if ( wCouleur[ 0 ].ToInteger > wMaxCouleur[ wCouleur[ 1 ] ] ) then
+        wCouleur := wGame[ j ].Trim.Split( [ ' ' ] );
+        if wMaxCouleur.ContainsKey( wCouleur[ 1 ] ) then
         begin
-          wMaxCouleur[ wCouleur[ 1 ] ] := wCouleur[ 0 ].ToInteger;
+          if ( wCouleur[ 0 ].ToInteger > wMaxCouleur[ wCouleur[ 1 ] ] ) then
+          begin
+            wMaxCouleur[ wCouleur[ 1 ] ] := wCouleur[ 0 ].ToInteger;
+          end;
+        end
+        else
+        begin
+          wMaxCouleur.Add( wCouleur[ 1 ], wCouleur[ 0 ].ToInteger );
         end;
-      end
-      else
-      begin
-        wMaxCouleur.Add( wCouleur[ 1 ], wCouleur[ 0 ].ToInteger );
       end;
+
+      wProduit := 1;
+      for wMax in wMaxCouleur do
+      begin
+        wProduit := wProduit * wMax.Value
+      end;
+      wMaxCouleur.Clear;
+
+      wSomme := wSomme + wProduit;
     end;
 
-    wProduit := 1;
-    for wMax in wMaxCouleur do
-    begin
-      wProduit := wProduit * wMax.Value
-    end;
-    wMaxCouleur.Clear;
-
-    wSomme := wSomme + wProduit;
+    Edt2.Text := wSomme.ToString;
+  finally
+    wMaxCouleur.Free;
   end;
-
-  Edt2.Text := wSomme.ToString;
 end;
 
 end.
