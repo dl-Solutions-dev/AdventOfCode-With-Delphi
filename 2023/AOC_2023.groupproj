@@ -3,10 +3,13 @@
         <ProjectGuid>{5B100CB3-36AE-47C0-AB81-89852833EC0C}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
+        <Projects Include="Day 1\AOC_Day1.dproj">
+            <Dependencies/>
+        </Projects>
         <Projects Include="Day 2\AOC_Day2.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="Day 1\AOC_Day1.dproj">
+        <Projects Include="Day 3\AOC_Day3.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -17,15 +20,6 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Target Name="AOC_Day2">
-        <MSBuild Projects="Day 2\AOC_Day2.dproj"/>
-    </Target>
-    <Target Name="AOC_Day2:Clean">
-        <MSBuild Projects="Day 2\AOC_Day2.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="AOC_Day2:Make">
-        <MSBuild Projects="Day 2\AOC_Day2.dproj" Targets="Make"/>
-    </Target>
     <Target Name="AOC_Day1">
         <MSBuild Projects="Day 1\AOC_Day1.dproj"/>
     </Target>
@@ -35,14 +29,32 @@
     <Target Name="AOC_Day1:Make">
         <MSBuild Projects="Day 1\AOC_Day1.dproj" Targets="Make"/>
     </Target>
+    <Target Name="AOC_Day2">
+        <MSBuild Projects="Day 2\AOC_Day2.dproj"/>
+    </Target>
+    <Target Name="AOC_Day2:Clean">
+        <MSBuild Projects="Day 2\AOC_Day2.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AOC_Day2:Make">
+        <MSBuild Projects="Day 2\AOC_Day2.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AOC_Day3">
+        <MSBuild Projects="Day 3\AOC_Day3.dproj"/>
+    </Target>
+    <Target Name="AOC_Day3:Clean">
+        <MSBuild Projects="Day 3\AOC_Day3.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AOC_Day3:Make">
+        <MSBuild Projects="Day 3\AOC_Day3.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="AOC_Day2;AOC_Day1"/>
+        <CallTarget Targets="AOC_Day1;AOC_Day2;AOC_Day3"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="AOC_Day2:Clean;AOC_Day1:Clean"/>
+        <CallTarget Targets="AOC_Day1:Clean;AOC_Day2:Clean;AOC_Day3:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="AOC_Day2:Make;AOC_Day1:Make"/>
+        <CallTarget Targets="AOC_Day1:Make;AOC_Day2:Make;AOC_Day3:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
