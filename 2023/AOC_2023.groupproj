@@ -12,7 +12,10 @@
         <Projects Include="Day 3\AOC_Day3.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="Day 4\AOC_D4.dproj">
+        <Projects Include="Day 4\AOC_Day4.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Day 5\AOC_Day5.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -50,23 +53,32 @@
     <Target Name="AOC_Day3:Make">
         <MSBuild Projects="Day 3\AOC_Day3.dproj" Targets="Make"/>
     </Target>
-    <Target Name="AOC_D4">
-        <MSBuild Projects="Day 4\AOC_D4.dproj"/>
+    <Target Name="AOC_Day4">
+        <MSBuild Projects="Day 4\AOC_Day4.dproj"/>
     </Target>
-    <Target Name="AOC_D4:Clean">
-        <MSBuild Projects="Day 4\AOC_D4.dproj" Targets="Clean"/>
+    <Target Name="AOC_Day4:Clean">
+        <MSBuild Projects="Day 4\AOC_Day4.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="AOC_D4:Make">
-        <MSBuild Projects="Day 4\AOC_D4.dproj" Targets="Make"/>
+    <Target Name="AOC_Day4:Make">
+        <MSBuild Projects="Day 4\AOC_Day4.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AOC_Day5">
+        <MSBuild Projects="Day 5\AOC_Day5.dproj"/>
+    </Target>
+    <Target Name="AOC_Day5:Clean">
+        <MSBuild Projects="Day 5\AOC_Day5.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AOC_Day5:Make">
+        <MSBuild Projects="Day 5\AOC_Day5.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="AOC_Day1;AOC_Day2;AOC_Day3;AOC_D4"/>
+        <CallTarget Targets="AOC_Day1;AOC_Day2;AOC_Day3;AOC_Day4;AOC_Day5"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="AOC_Day1:Clean;AOC_Day2:Clean;AOC_Day3:Clean;AOC_D4:Clean"/>
+        <CallTarget Targets="AOC_Day1:Clean;AOC_Day2:Clean;AOC_Day3:Clean;AOC_Day4:Clean;AOC_Day5:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="AOC_Day1:Make;AOC_Day2:Make;AOC_Day3:Make;AOC_D4:Make"/>
+        <CallTarget Targets="AOC_Day1:Make;AOC_Day2:Make;AOC_Day3:Make;AOC_Day4:Make;AOC_Day5:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

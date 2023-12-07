@@ -2,3 +2,4 @@
 *.identcache
 *.~*
 *debug*
+*Release*
