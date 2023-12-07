@@ -1,4 +1,4 @@
-program AOC_D4;
+program AOC_Day4;
 
 uses
   Vcl.Forms,
