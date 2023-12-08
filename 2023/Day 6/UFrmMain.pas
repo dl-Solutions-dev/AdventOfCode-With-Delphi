@@ -31,7 +31,7 @@ var
 implementation
 
 uses
-  System.IOUtils;
+  System.IOUtils, System.StrUtils;
 
 const
   FILENAME : string = '.\input.txt';
@@ -55,6 +55,7 @@ var
   F : TArray< string >;
   LTab : TArray< TArray< string > >;
   LResult : Int64;
+  LNbFois : Integer;
 begin
   F := TFile.ReadAllLines( FILENAME );
 
@@ -66,7 +67,11 @@ begin
 
   for var i := 0 to High( LTab[ 0 ] ) do
   begin
-    LResult := LResult * GetNumberWays( LTab[ 0, i ].ToInteger, LTab[ 1, i ].ToInteger );
+    LNbFois := GetNumberWays( LTab[ 0, i ].ToInteger, LTab[ 1, i ].ToInteger );
+    if ( LNbFois > 0 ) then
+    begin
+      LResult := LResult * LNbFois;
+    end;
   end;
 
   Edt1.Text := LResult.ToString;
