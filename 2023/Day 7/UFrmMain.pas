@@ -45,8 +45,6 @@ uses
 const
   FILENAME : string = '.\input.txt';
   TESTS_FILENAME : string = '.\input_Tests.txt';
-  CARD : TSysCharSet = [ '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'T' ];
-  TYPE_HAND : TSysCharSet = [ 'A', 'B' ];
 
 {$R *.dfm}
   { TFrmMain }
