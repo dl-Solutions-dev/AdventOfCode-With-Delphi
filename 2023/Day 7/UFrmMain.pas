@@ -82,8 +82,12 @@ begin
   FValueCard.Values[ '3' ] := '3';
   FValueCard.Values[ '2' ] := '2';
 
-  // Appel sans joker
-  Edt1.Text := GetSomme( F, ' ' ).ToString;
+  try
+    // Appel sans joker
+    Edt1.Text := GetSomme( F, ' ' ).ToString;
+  finally
+    FreeAndNil( FValueCard );
+  end;
 end;
 
 procedure TFrmMain.Exercice2;
@@ -109,8 +113,12 @@ begin
   FValueCard.Values[ '3' ] := '3';
   FValueCard.Values[ '2' ] := '2';
 
-  // Appel avec joker
-  Edt2.Text := GetSomme( F, 'J' ).ToString;
+  try
+    // Appel avec joker
+    Edt2.Text := GetSomme( F, 'J' ).ToString;
+  finally
+    FreeAndNil( FValueCard );
+  end;
 end;
 
 procedure TFrmMain.FormClose( Sender : TObject; var Action : TCloseAction );
@@ -142,25 +150,21 @@ var
   LHands : TArray< string >;
   LGame : TArray< TArray< int64 > >;
 begin
-  try
-    F := TFile.ReadAllLines( GetInputFileName );
+  F := TFile.ReadAllLines( GetInputFileName );
 
-    SetLength( LGame, 0 );
+  SetLength( LGame, 0 );
 
-    for var i := 0 to High( F ) do
-    begin
-      LHands := F[ i ].Split( [ ' ' ] );
+  for var i := 0 to High( F ) do
+  begin
+    LHands := F[ i ].Split( [ ' ' ] );
 
-      SetLength( LGame, Length( LGame ) + 1 );
-      SetLength( LGame[ High( LGame ) ], 2 );
+    SetLength( LGame, Length( LGame ) + 1 );
+    SetLength( LGame[ High( LGame ) ], 2 );
 
-      // On valorise la carte
-      LGame[ High( LGame ) ][ 0 ] := GetValueHand( LHands[ 0 ], aJoker );
-      // On stocke son bid amount
-      LGame[ High( LGame ) ][ 1 ] := LHands[ 1 ].ToInteger;
-    end;
-  finally
-    FreeAndNil( FValueCard );
+    // On valorise la carte
+    LGame[ High( LGame ) ][ 0 ] := GetValueHand( LHands[ 0 ], aJoker );
+    // On stocke son bid amount
+    LGame[ High( LGame ) ][ 1 ] := LHands[ 1 ].ToInteger;
   end;
 
   // On tri le tableau obtenu sur le poids des cartes
