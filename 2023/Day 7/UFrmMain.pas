@@ -66,7 +66,7 @@ var
   LGame : TArray< TArray< int64 > >;
   LSomme : int64;
 begin
-  // On initialise les valeur des cartes
+  // On initialise les valeurs des cartes
   FValueCard := TStringList.Create;
   FValueCard.Values[ 'A' ] := '14';
   FValueCard.Values[ 'K' ] := '13';
@@ -97,7 +97,7 @@ var
   LGame : TArray< TArray< int64 > >;
   LSomme : int64;
 begin
-  // On initialise les valeur des cartes
+  // On initialise les valeurs des cartes
   FValueCard := TStringList.Create;
   FValueCard.Values[ 'A' ] := '14';
   FValueCard.Values[ 'K' ] := '13';
