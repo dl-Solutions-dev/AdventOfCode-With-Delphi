@@ -63,27 +63,31 @@ var
   LStep : string;
   Ind : SmallInt;
 begin
-  InitializeMap;
+  try
+    InitializeMap;
 
-  LSomme := 0;
-  LStep := 'AAA';
-  Ind := 0;
-  while ( LStep <> 'ZZZ' ) do
-  begin
-    LStep := FMap[ LStep ][ FWay[ Ind ] ];
-
-    Inc( LSomme );
-
-    Inc( Ind );
-    if ( Ind > High( FWay ) ) then
+    LSomme := 0;
+    LStep := 'AAA';
+    Ind := 0;
+    while ( LStep <> 'ZZZ' ) do
     begin
-      Ind := 0;
-    end;
-  end;
+      LStep := FMap[ LStep ][ FWay[ Ind ] ];
 
-  Edt1.Text := LSomme.ToString;
-  Edt1.SelectAll;
-  Edt1.CopyToClipboard;
+      Inc( LSomme );
+
+      Inc( Ind );
+      if ( Ind > High( FWay ) ) then
+      begin
+        Ind := 0;
+      end;
+    end;
+
+    Edt1.Text := LSomme.ToString;
+    Edt1.SelectAll;
+    Edt1.CopyToClipboard;
+  finally
+    FreeAndNil( FMap );
+  end;
 end;
 
 procedure TFrmMain.Exercice2;
@@ -91,20 +95,24 @@ var
   LPair : TPair< string, TArray< string > >;
   LSomme : UInt64;
 begin
-  InitializeMap;
+  try
+    InitializeMap;
 
-  LSomme := 1;
-  for LPair in FMap do
-  begin
-    if LPair.Key[ 3 ] = 'A' then
+    LSomme := 1;
+    for LPair in FMap do
     begin
-      LSomme := PPCM( LSomme, RunWay( LPair.Key ) );
+      if LPair.Key[ 3 ] = 'A' then
+      begin
+        LSomme := PPCM( LSomme, RunWay( LPair.Key ) );
+      end;
     end;
-  end;
 
-  Edt2.Text := LSomme.ToString;
-  Edt2.SelectAll;
-  Edt2.CopyToClipboard;
+    Edt2.Text := LSomme.ToString;
+    Edt2.SelectAll;
+    Edt2.CopyToClipboard;
+  finally
+    FreeAndNil( FMap );
+  end;
 end;
 
 function TFrmMain.GetInputFileName : string;
@@ -130,6 +138,7 @@ begin
   F := TFile.ReadAllLines( GetInputFileName );
 
   FMap := TObjectDictionary< string, TArray< string > >.Create;
+
   LStep := '';
 
   for var i := 0 to High( F ) do
