@@ -15,6 +15,7 @@ type
     ChkTests : TCheckBox;
     procedure BtnExercice1Click( Sender : TObject );
     procedure BtnExercice2Click( Sender : TObject );
+    procedure FormCreate( Sender : TObject );
   private
     { Déclarations privées }
     FMap : TObjectDictionary< string, TArray< string > >;
@@ -113,6 +114,11 @@ begin
   finally
     FreeAndNil( FMap );
   end;
+end;
+
+procedure TFrmMain.FormCreate( Sender : TObject );
+begin
+  FMap := nil;
 end;
 
 function TFrmMain.GetInputFileName : string;

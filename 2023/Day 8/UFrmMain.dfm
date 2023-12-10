@@ -10,6 +10,7 @@ object FrmMain: TFrmMain
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnCreate = FormCreate
   TextHeight = 15
   object Edt1: TEdit
     Left = 56
