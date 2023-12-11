@@ -2,7 +2,7 @@ object FrmMain: TFrmMain
   Left = 0
   Top = 0
   Caption = 'FrmMain'
-  ClientHeight = 374
+  ClientHeight = 170
   ClientWidth = 202
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -10,9 +10,6 @@ object FrmMain: TFrmMain
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
-  DesignSize = (
-    202
-    374)
   TextHeight = 15
   object Edt1: TEdit
     Left = 56
@@ -55,21 +52,5 @@ object FrmMain: TFrmMain
     Checked = True
     State = cbChecked
     TabOrder = 4
-  end
-  object Button1: TButton
-    Left = 111
-    Top = 9
-    Width = 75
-    Height = 25
-    Caption = 'Button1'
-    TabOrder = 5
-  end
-  object MmoMap: TMemo
-    Left = 9
-    Top = 160
-    Width = 185
-    Height = 206
-    Anchors = [akLeft, akTop, akRight, akBottom]
-    TabOrder = 6
   end
 end

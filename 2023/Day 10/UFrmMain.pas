@@ -14,8 +14,6 @@ type
     Edt2 : TEdit;
     BtnExercice2 : TButton;
     ChkTests : TCheckBox;
-    Button1 : TButton;
-    MmoMap : TMemo;
     procedure BtnExercice1Click( Sender : TObject );
     procedure BtnExercice2Click( Sender : TObject );
   private
