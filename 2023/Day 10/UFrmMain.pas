@@ -333,12 +333,7 @@ begin
     begin
       Result := ( Result + 1 ) * -1;
     end;
-  end
-  // else
-  // begin
-  // SetLength( FPath, Length(FPath)+1 );
-  // FPath[ High(FPath) - 1 ] := aPos;
-  // end;
+  end;
 end;
 
 function TFrmMain.LoadLabyrinth : TPoint;
