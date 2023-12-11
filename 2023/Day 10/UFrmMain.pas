@@ -109,7 +109,7 @@ begin
   end
   else
   begin
-    DeleteObject( FRegion );
+    Edt1.Text := 'Départ non trouvé';
   end;
 end;
 
