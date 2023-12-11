@@ -30,6 +30,9 @@
         <Projects Include="Day 9\AOC_Day9.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="Day 10\AOC_Day10.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -119,14 +122,23 @@
     <Target Name="AOC_Day9:Make">
         <MSBuild Projects="Day 9\AOC_Day9.dproj" Targets="Make"/>
     </Target>
+    <Target Name="AOC_Day10">
+        <MSBuild Projects="Day 10\AOC_Day10.dproj"/>
+    </Target>
+    <Target Name="AOC_Day10:Clean">
+        <MSBuild Projects="Day 10\AOC_Day10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AOC_Day10:Make">
+        <MSBuild Projects="Day 10\AOC_Day10.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="AOC_Day1;AOC_Day2;AOC_Day3;AOC_Day4;AOC_Day5;AOC_Day6;AOC_Day7;AOC_Day8;AOC_Day9"/>
+        <CallTarget Targets="AOC_Day1;AOC_Day2;AOC_Day3;AOC_Day4;AOC_Day5;AOC_Day6;AOC_Day7;AOC_Day8;AOC_Day9;AOC_Day10"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="AOC_Day1:Clean;AOC_Day2:Clean;AOC_Day3:Clean;AOC_Day4:Clean;AOC_Day5:Clean;AOC_Day6:Clean;AOC_Day7:Clean;AOC_Day8:Clean;AOC_Day9:Clean"/>
+        <CallTarget Targets="AOC_Day1:Clean;AOC_Day2:Clean;AOC_Day3:Clean;AOC_Day4:Clean;AOC_Day5:Clean;AOC_Day6:Clean;AOC_Day7:Clean;AOC_Day8:Clean;AOC_Day9:Clean;AOC_Day10:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="AOC_Day1:Make;AOC_Day2:Make;AOC_Day3:Make;AOC_Day4:Make;AOC_Day5:Make;AOC_Day6:Make;AOC_Day7:Make;AOC_Day8:Make;AOC_Day9:Make"/>
+        <CallTarget Targets="AOC_Day1:Make;AOC_Day2:Make;AOC_Day3:Make;AOC_Day4:Make;AOC_Day5:Make;AOC_Day6:Make;AOC_Day7:Make;AOC_Day8:Make;AOC_Day9:Make;AOC_Day10:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
