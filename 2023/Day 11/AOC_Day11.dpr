@@ -1,8 +1,8 @@
-program AOC_Day8;
+program AOC_Day11;
 
 uses
   Vcl.Forms,
-  UFrmMain in '..\..\..\Embarcadero\Studio\Projets\UFrmMain.pas' {FrmMain};
+  UFrmMain in 'UFrmMain.pas' {FrmMain};
 
 {$R *.res}
 
