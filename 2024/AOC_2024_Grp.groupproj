@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{65A9E071-CDF1-4C62-8914-B6A54DBE73EE}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Day 1\AOC_2024_Day1.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Day 2\AOC_2024_Day2.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Day 3\AOC_2024_Day3.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Day 4\AOC_2024_Day4.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="AOC_2024_Day1">
+        <MSBuild Projects="Day 1\AOC_2024_Day1.dproj"/>
+    </Target>
+    <Target Name="AOC_2024_Day1:Clean">
+        <MSBuild Projects="Day 1\AOC_2024_Day1.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AOC_2024_Day1:Make">
+        <MSBuild Projects="Day 1\AOC_2024_Day1.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AOC_2024_Day2">
+        <MSBuild Projects="Day 2\AOC_2024_Day2.dproj"/>
+    </Target>
+    <Target Name="AOC_2024_Day2:Clean">
+        <MSBuild Projects="Day 2\AOC_2024_Day2.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AOC_2024_Day2:Make">
+        <MSBuild Projects="Day 2\AOC_2024_Day2.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AOC_2024_Day3">
+        <MSBuild Projects="Day 3\AOC_2024_Day3.dproj"/>
+    </Target>
+    <Target Name="AOC_2024_Day3:Clean">
+        <MSBuild Projects="Day 3\AOC_2024_Day3.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AOC_2024_Day3:Make">
+        <MSBuild Projects="Day 3\AOC_2024_Day3.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AOC_2024_Day4">
+        <MSBuild Projects="Day 4\AOC_2024_Day4.dproj"/>
+    </Target>
+    <Target Name="AOC_2024_Day4:Clean">
+        <MSBuild Projects="Day 4\AOC_2024_Day4.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AOC_2024_Day4:Make">
+        <MSBuild Projects="Day 4\AOC_2024_Day4.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="AOC_2024_Day1;AOC_2024_Day2;AOC_2024_Day3;AOC_2024_Day4"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="AOC_2024_Day1:Clean;AOC_2024_Day2:Clean;AOC_2024_Day3:Clean;AOC_2024_Day4:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="AOC_2024_Day1:Make;AOC_2024_Day2:Make;AOC_2024_Day3:Make;AOC_2024_Day4:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
