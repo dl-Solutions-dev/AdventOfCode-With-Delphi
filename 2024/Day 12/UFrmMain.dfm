@@ -62,6 +62,10 @@ object FrmMain: TFrmMain
     Width = 241
     Height = 303
     Anchors = [akLeft, akTop, akRight, akBottom]
+    Lines.Strings = (
+      'Memo1')
     TabOrder = 5
+    ExplicitWidth = 231
+    ExplicitHeight = 271
   end
 end

@@ -10,6 +10,8 @@ object FrmMain: TFrmMain
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnClose = FormClose
+  OnCreate = FormCreate
   DesignSize = (
     257
     471)
@@ -62,6 +64,9 @@ object FrmMain: TFrmMain
     Width = 241
     Height = 303
     Anchors = [akLeft, akTop, akRight, akBottom]
+    ScrollBars = ssVertical
     TabOrder = 5
+    ExplicitWidth = 231
+    ExplicitHeight = 271
   end
 end

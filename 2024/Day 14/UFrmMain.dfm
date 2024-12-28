@@ -62,6 +62,16 @@ object FrmMain: TFrmMain
     Width = 241
     Height = 303
     Anchors = [akLeft, akTop, akRight, akBottom]
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Courier New'
+    Font.Style = []
+    Lines.Strings = (
+      'Memo1')
+    ParentFont = False
     TabOrder = 5
+    ExplicitWidth = 231
+    ExplicitHeight = 271
   end
 end

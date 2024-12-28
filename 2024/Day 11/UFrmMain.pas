@@ -209,7 +209,12 @@ end;
 
 function TFrmMain.GetNewMap( aStrings: TStringList ): TStringList;
 begin
+  Result := TStringList.Create;
 
+  for var i := 0 to aStrings.Count - 1 do
+  begin
+
+  end;
 end;
 
 procedure TFrmMain.LoadFile;
