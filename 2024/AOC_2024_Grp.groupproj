@@ -54,6 +54,9 @@
         <Projects Include="Day 23\AC_2024_Day23.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="Day 24\AOC_2024_Day24.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -215,14 +218,23 @@
     <Target Name="AC_2024_Day23:Make">
         <MSBuild Projects="Day 23\AC_2024_Day23.dproj" Targets="Make"/>
     </Target>
+    <Target Name="AOC_2024_Day24">
+        <MSBuild Projects="Day 24\AOC_2024_Day24.dproj"/>
+    </Target>
+    <Target Name="AOC_2024_Day24:Clean">
+        <MSBuild Projects="Day 24\AOC_2024_Day24.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AOC_2024_Day24:Make">
+        <MSBuild Projects="Day 24\AOC_2024_Day24.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="AOC_2024_Day1;AOC_2024_Day2;AOC_2024_Day3;AOC_2024_Day4;AOC_2024_Day5;AOC_2024_Day6;AOC_2024_Day7;AOC_2024_Day8;AOC_2024_Day9;AOC_2024_Day10;AOC_2024_Day11;AOC_2024_Day12;AOC_2024_Day13;AOC_2024_Day14;AOC_2024_Day15;AOC_2024_Day16;AC_2024_Day23"/>
+        <CallTarget Targets="AOC_2024_Day1;AOC_2024_Day2;AOC_2024_Day3;AOC_2024_Day4;AOC_2024_Day5;AOC_2024_Day6;AOC_2024_Day7;AOC_2024_Day8;AOC_2024_Day9;AOC_2024_Day10;AOC_2024_Day11;AOC_2024_Day12;AOC_2024_Day13;AOC_2024_Day14;AOC_2024_Day15;AOC_2024_Day16;AC_2024_Day23;AOC_2024_Day24"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="AOC_2024_Day1:Clean;AOC_2024_Day2:Clean;AOC_2024_Day3:Clean;AOC_2024_Day4:Clean;AOC_2024_Day5:Clean;AOC_2024_Day6:Clean;AOC_2024_Day7:Clean;AOC_2024_Day8:Clean;AOC_2024_Day9:Clean;AOC_2024_Day10:Clean;AOC_2024_Day11:Clean;AOC_2024_Day12:Clean;AOC_2024_Day13:Clean;AOC_2024_Day14:Clean;AOC_2024_Day15:Clean;AOC_2024_Day16:Clean;AC_2024_Day23:Clean"/>
+        <CallTarget Targets="AOC_2024_Day1:Clean;AOC_2024_Day2:Clean;AOC_2024_Day3:Clean;AOC_2024_Day4:Clean;AOC_2024_Day5:Clean;AOC_2024_Day6:Clean;AOC_2024_Day7:Clean;AOC_2024_Day8:Clean;AOC_2024_Day9:Clean;AOC_2024_Day10:Clean;AOC_2024_Day11:Clean;AOC_2024_Day12:Clean;AOC_2024_Day13:Clean;AOC_2024_Day14:Clean;AOC_2024_Day15:Clean;AOC_2024_Day16:Clean;AC_2024_Day23:Clean;AOC_2024_Day24:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="AOC_2024_Day1:Make;AOC_2024_Day2:Make;AOC_2024_Day3:Make;AOC_2024_Day4:Make;AOC_2024_Day5:Make;AOC_2024_Day6:Make;AOC_2024_Day7:Make;AOC_2024_Day8:Make;AOC_2024_Day9:Make;AOC_2024_Day10:Make;AOC_2024_Day11:Make;AOC_2024_Day12:Make;AOC_2024_Day13:Make;AOC_2024_Day14:Make;AOC_2024_Day15:Make;AOC_2024_Day16:Make;AC_2024_Day23:Make"/>
+        <CallTarget Targets="AOC_2024_Day1:Make;AOC_2024_Day2:Make;AOC_2024_Day3:Make;AOC_2024_Day4:Make;AOC_2024_Day5:Make;AOC_2024_Day6:Make;AOC_2024_Day7:Make;AOC_2024_Day8:Make;AOC_2024_Day9:Make;AOC_2024_Day10:Make;AOC_2024_Day11:Make;AOC_2024_Day12:Make;AOC_2024_Day13:Make;AOC_2024_Day14:Make;AOC_2024_Day15:Make;AOC_2024_Day16:Make;AC_2024_Day23:Make;AOC_2024_Day24:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
