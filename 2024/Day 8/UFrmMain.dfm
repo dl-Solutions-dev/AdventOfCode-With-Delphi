@@ -65,5 +65,7 @@ object FrmMain: TFrmMain
     Lines.Strings = (
       'Memo1')
     TabOrder = 5
+    ExplicitWidth = 231
+    ExplicitHeight = 271
   end
 end
