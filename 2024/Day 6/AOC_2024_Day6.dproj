@@ -129,7 +129,7 @@
         </DCCReference>
         <DCCReference Include="UGardianWalk.pas"/>
         <DCCReference Include="..\..\..\Communs\Base\Communs.Helpers.pas"/>
-        <None Include="RreadMe.md"/>
+        <None Include="ReadMe.md"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -150,7 +150,7 @@
                 <Source>
                     <Source Name="MainSource">AOC_2024_Day6.dpr</Source>
                 </Source>
-                <WelcomePageFile Path="RreadMe.md"/>
+                <WelcomePageFile Path="ReadMe.md"/>
                 <WelcomePageFolder/>
             </Delphi.Personality>
             <Deployment Version="5">
