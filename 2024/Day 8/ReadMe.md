@@ -23,7 +23,7 @@ Maintenant il faut prendre en compte la résonnace. Concrètement lorsqu'on a trou
 alignement, au lieu de placer un "#" en amont et en aval des 2 antennes, on en place :
 
 - à la place de celle-ci
-- on poursuit la ligne tant qu'on n sort pas de la matrice, ceci dans les deux sens
+- on poursuit la ligne tant qu'on ne sort pas de la matrice, ceci dans les deux sens
 
 <u>Résultat :</u> 991
 
