@@ -14,7 +14,9 @@ uses
   Vcl.Dialogs,
   Vcl.StdCtrls,
   System.Generics.Defaults,
-  System.Generics.Collections;
+  System.Generics.Collections,
+  UGardianWalk,
+  Communs.Helpers;
 
 type
   TFrmMain = class( TForm )
@@ -31,17 +33,18 @@ type
     FFile: TArray< string >;
     FIncLine: Integer;
     FIncCol: Integer;
-    FMatrice: TArray< TArray< string > >;
     FBlocs: TArray< TPoint >;
+    FRoom: TArray< string >;
+    FPath: TArray< TPoint >;
+    FNbPossibleLoops: Integer;
 
     function GetInputFileName: string;
-    function GetCoordinates( aMatrice: TArray< string > ): TPoint;
-    function Deplacer( aMatrice: TArray< string >; var aPosition: TPoint; out aIncrement: Integer ): Boolean;
-    function Boucle( aIndice: Integer ): Integer;
 
     procedure Exercice1;
     procedure Exercice2;
     procedure LoadFile;
+    procedure ShowResult( aNbStep: Integer; aNewMatrice: TArray< string >; aPath: TArray< TPoint >; aLoop: Boolean );
+    procedure CheckLoop( aNbStep: Integer; aNewMatrice: TArray< string >; aPath: TArray< TPoint >; aLoop: Boolean );
   public
     { Déclarations publiques }
   end;
@@ -63,79 +66,18 @@ const
 {$R *.dfm}
   { TFrmMain }
 
-function TFrmMain.Boucle( aIndice: Integer ): Integer;
-var
-  wPoint, wCurseur: TPoint;
+procedure TFrmMain.ShowResult( aNbStep: Integer;
+  aNewMatrice: TArray< string >; aPath: TArray< TPoint >; aLoop: Boolean );
 begin
-  Result := 0;
-
-  wPoint := FBlocs[ aIndice ];
-
-  if ( wPoint.X >= 0 ) then
+  for var i := 0 to High( aNewMatrice ) do
   begin
-    wCurseur := wPoint;
-    wCurseur.X := wCurseur.X - 1;
-    while ( wCurseur.X >= 0 ) and ( FMatrice[ wCurseur.X, wCurseur.Y ] = '.' ) do
-    begin
-      wCurseur.X := wCurseur.X - 1;
-    end;
-
-    if ( wPoint.X >= 0 ) and ( FMatrice[ wCurseur.X, wCurseur.Y ] <> '#' ) and
-      ( FMatrice[ wCurseur.X, wCurseur.Y ].ToInteger > ( FMatrice[ wPoint.X, wPoint.Y ].ToInteger + 1 ) ) then
-    begin
-      Inc( Result );
-    end;
+    MmoLogs.lines.Add( FormatFloat( '000', i ) + ' - ' + aNewMatrice[ i ] );
   end;
 
-  if ( wPoint.X <= high( FMatrice ) ) then
-  begin
-    wCurseur := wPoint;
-    wCurseur.X := wCurseur.X + 1;
-    while ( wPoint.X <= high( FMatrice ) ) and ( FMatrice[ wCurseur.X, wCurseur.Y ] = '.' ) do
-    begin
-      wCurseur.X := wCurseur.X + 1;
-    end;
-
-    if ( wPoint.X <= high( FMatrice ) ) and ( FMatrice[ wCurseur.X, wCurseur.Y ] <> '#' ) and ( FMatrice[ wCurseur.X, wCurseur.Y ] <> '^' ) and
-      ( FMatrice[ wCurseur.X, wCurseur.Y ].ToInteger > ( FMatrice[ wPoint.X, wPoint.Y ].ToInteger + 1 ) ) then
-    begin
-      Inc( Result );
-    end;
-  end;
-
-  // ---
-
-  if ( wPoint.Y >= 0 ) then
-  begin
-    wCurseur := wPoint;
-    wCurseur.Y := wCurseur.Y - 1;
-    while ( wCurseur.Y >= 0 ) and ( FMatrice[ wCurseur.X, wCurseur.Y ] = '.' ) do
-    begin
-      wCurseur.Y := wCurseur.Y - 1;
-    end;
-
-    if ( wCurseur.Y >= 0 ) and ( FMatrice[ wCurseur.X, wCurseur.Y ] <> '#' ) and ( FMatrice[ wCurseur.X, wCurseur.Y ] <> '^' ) and
-      ( FMatrice[ wCurseur.X, wCurseur.Y ].ToInteger > ( FMatrice[ wPoint.X, wPoint.Y ].ToInteger + 1 ) ) then
-    begin
-      Inc( Result );
-    end;
-  end;
-
-  if ( wPoint.Y <= high( FMatrice[ 0 ] ) ) then
-  begin
-    wCurseur := wPoint;
-    wCurseur.X := wCurseur.Y + 1;
-    while ( wPoint.Y <= high( FMatrice[ 0 ] ) ) and ( FMatrice[ wCurseur.X, wCurseur.Y ] = '.' ) do
-    begin
-      wCurseur.Y := wCurseur.Y + 1;
-    end;
-
-    if ( wPoint.Y <= high( FMatrice[ 0 ] ) ) and ( FMatrice[ wCurseur.X, wCurseur.Y ] <> '#' ) and ( FMatrice[ wCurseur.X, wCurseur.Y ] <> '^' ) and
-      ( FMatrice[ wCurseur.X, wCurseur.Y ].ToInteger > ( FMatrice[ wPoint.X, wPoint.Y ].ToInteger + 1 ) ) then
-    begin
-      Inc( Result );
-    end;
-  end;
+  FRoom := aNewMatrice;
+  FPath := aPath;
+  Edt1.Text := aNbStep.ToString;
+  Edt1.CopyToClipboard;
 end;
 
 procedure TFrmMain.BtnExercice1Click( Sender: TObject );
@@ -148,183 +90,110 @@ begin
   Exercice2;
 end;
 
-function TFrmMain.Deplacer( aMatrice: TArray< string >; var aPosition: TPoint; out aIncrement: Integer ): Boolean;
+procedure TFrmMain.CheckLoop( aNbStep: Integer; aNewMatrice: TArray< string >;
+  aPath: TArray< TPoint >; aLoop: Boolean );
 begin
-  Result := True;
-  aIncrement := 0;
-
-  if ( aPosition.X + FIncLine < 0 ) or ( aPosition.X + FIncLine > High( aMatrice ) ) or ( aPosition.Y + FIncCol < 0 ) or
-    ( aPosition.Y + FIncCol > Length( aMatrice[ 0 ] ) ) then
+  if aLoop then
   begin
-    Exit( False );
+    Inc( FNbPossibleLoops );
   end;
 
-  while ( aMatrice[ aPosition.X + FIncLine, aPosition.Y + FIncCol ] = '#' ) do
-  begin
-    SetLength( FBlocs, Length( FBlocs ) + 1 );
-    FBlocs[ High( FBlocs ) ].X := aPosition.X;
-    FBlocs[ High( FBlocs ) ].Y := aPosition.Y;
-
-    if ( FIncLine = -1 ) then
-    begin
-      FIncLine := 0;
-      FIncCol := 1;
-    end
-    else if ( FIncCol = 1 ) then
-    begin
-      FIncCol := 0;
-      FIncLine := 1;
-    end
-    else if ( FIncCol = 0 ) then
-    begin
-      if ( FIncLine = 1 ) then
-      begin
-        FIncLine := 0;
-        FIncCol := -1;
-      end;
-    end
-    else if ( FIncCol = -1 ) then
-    begin
-      FIncCol := 0;
-      FIncLine := -1;
-    end;
-  end;
-
-  if ( aPosition.X + FIncLine < 0 ) or ( aPosition.X + FIncLine > High( aMatrice ) ) or ( aPosition.Y + FIncCol < 0 ) or
-    ( aPosition.Y + FIncCol > Length( aMatrice[ 0 ] ) ) then
-  begin
-    Exit( False );
-  end;
-
-  aPosition.X := aPosition.X + FIncLine;
-  aPosition.Y := aPosition.Y + FIncCol;
-
-  if ( aMatrice[ aPosition.X ][ aPosition.Y ] <> 'I' ) then
-  begin
-    aMatrice[ aPosition.X ][ aPosition.Y ] := 'I';
-    aIncrement := 1;
-  end;
+  // SetLength( aPath, 0 );
+  // SetLength( aNewMatrice, 0 );
 end;
 
 procedure TFrmMain.Exercice1;
 var
-  F, L: TArray< string >;
-  LTotal: LongInt;
-  LPosition: TPoint;
-  wInc: Integer;
+  F: TArray< string >;
+  LThread: TGuardianWalk;
 begin
   F := TFile.ReadAllLines( GetInputFileName );
 
-  LTotal := 1;
   MmoLogs.Clear;
 
-  LPosition := GetCoordinates( F );
+  LThread := TGuardianWalk.Create( True );
+  LThread.Room := F;
+  LThread.EndProc := ShowResult;
+  LThread.Start;
 
-  F[ LPosition.X ][ LPosition.Y ] := 'I';
+  LThread.WaitFor;
 
-  FIncLine := -1;
-  FIncCol := 0;
-
-  while Deplacer( F, LPosition, wInc ) do
-  begin
-    LTotal := LTotal + wInc;
-  end;
-
-  for var i := 0 to High( F ) do
-  begin
-    MmoLogs.lines.Add( FormatFloat( '000', i ) + ' - ' + F[ i ] );
-  end;
-
-  Edt1.Text := LTotal.ToString;
-  Edt1.CopyToClipboard;
+  FreeAndNil( LThread );
 end;
 
 procedure TFrmMain.Exercice2;
 var
-  F: TArray< string >;
-  LTotal: LongInt;
-  LPosition: TPoint;
-  wInc: Integer;
-  LFile: TArray< string >;
+  F, LRoom: TArray< string >;
+  LThread: TGuardianWalk;
+  LThreadList: TThreadList< TGuardianWalk >;
 begin
   F := TFile.ReadAllLines( GetInputFileName );
 
-  SetLength( FMatrice, Length( F ), Length( F[ 0 ] ) );
+  FNbPossibleLoops := 0;
 
-  for var i := 0 to High( F ) do
-  begin
-    for var j := 1 to Length( F[ i ] ) do
-    begin
-      FMatrice[ i, j - 1 ] := F[ i, j ];
-    end;
-  end;
-
-  LTotal := 1;
   MmoLogs.Clear;
 
-  LPosition := GetCoordinates( F );
+  // partie 1 On mémorise le parcours du garde
+  SetLength( LRoom, Length( F ) );
+  TArray.Copy< string >( F, LRoom, Length( F ) );
 
-  SetLength( FBlocs, 1 );
-  FBlocs[ 0 ] := LPosition;
+  LThread := TGuardianWalk.Create( True );
+  LThread.Room := LRoom;
+  LThread.EndProc := ShowResult;
+  LThread.Start;
 
-  F[ LPosition.X ][ LPosition.Y ] := 'I';
+  LThread.WaitFor;
 
-  FIncLine := -1;
-  FIncCol := 0;
+  FreeAndNil( LThread );
 
-  while Deplacer( F, LPosition, wInc ) do
+  LThreadList := TThreadList< TGuardianWalk >.Create;
+
+  // Partie 2 : on va faire tous les parcours en plaçant un bloc à chaque step
+  for var i := 1 to High( FPath ) do
   begin
-    LTotal := LTotal + wInc;
-    if ( wInc <> 0 ) then
+    SetLength( LRoom, Length( F ) );
+    TArray.Copy< string >( F, LRoom, Length( F ) );
+
+    // On ajoute le bloc
+    LRoom[ FPath[ i ].X, FPath[ i ].Y ] := '#';
+
+    // On fait le parcours pour voir si ça boucle
+    LThread := TGuardianWalk.Create( True );
+    LThread.Room := LRoom;
+    LThread.EndProc := CheckLoop;
+    LThread.Start;
+
+    LThreadList.Add( LThread );
+
+    // On limite à 100 threads simultanés
+    with LThreadList.LockList do
     begin
-      FMatrice[ LPosition.X, LPosition.Y - 1 ] := LTotal.ToString;
-    end;
-  end;
-
-  SetLength( LFile, 0 );
-
-  for var i := 0 to High( FMatrice ) do
-  begin
-    SetLength( LFile, Length( LFile ) + 1 );
-
-    LFile[ High( LFile ) ] := String.Join( '|', FMatrice[ i ] );
-  end;
-
-  TFile.WriteAllLines( '.\Matrice.dat', LFile );
-
-  LTotal := 0;
-
-  for var i := 0 to High( FBlocs ) do
-  begin
-    LTotal := LTotal + Boucle( i );
-  end;
-
-  for var i := 0 to High( FBlocs ) do
-  begin
-    MmoLogs.lines.Add( FBlocs[ i ].X.ToString + ' , ' + FBlocs[ i ].Y.ToString );
-  end;
-
-  Edt2.Text := LTotal.ToString;
-  Edt2.CopyToClipboard;
-end;
-
-function TFrmMain.GetCoordinates( aMatrice: TArray< string > ): TPoint;
-var
-  i, j: Integer;
-begin
-  for i := 0 to High( aMatrice ) do
-  begin
-    for j := 1 to Length( aMatrice[ i ] ) do
-    begin
-      if ( aMatrice[ i, j ] = '^' ) then
+      if Count > 100 then
       begin
-        Result.X := i;
-        Result.Y := j;
+        for var j := 0 to Count - 1 do
+        begin
+          Items[ j ].WaitFor;
+        end;
 
-        Exit;
+        Clear;
       end;
     end;
+    LThreadList.UnlockList;
   end;
+
+  // On attend la fin de l'exécution, des derniers threads
+  with LThreadList.LockList do
+  begin
+    for var i := 0 to Count - 1 do
+    begin
+      Items[ i ].WaitFor;
+    end;
+
+    Clear;
+  end;
+
+  Edt2.Text := FNbPossibleLoops.ToString;
+  Edt2.CopyToClipboard;
 end;
 
 function TFrmMain.GetInputFileName: string;

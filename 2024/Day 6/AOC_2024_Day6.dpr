@@ -2,7 +2,9 @@ program AOC_2024_Day6;
 
 uses
   Vcl.Forms,
-  UFrmMain in 'UFrmMain.pas' {FrmMain};
+  UFrmMain in 'UFrmMain.pas' {FrmMain},
+  UGardianWalk in 'UGardianWalk.pas',
+  Communs.Helpers in '..\..\..\Communs\Base\Communs.Helpers.pas';
 
 {$R *.res}
 
