@@ -98,8 +98,8 @@ begin
     Inc( FNbPossibleLoops );
   end;
 
-  // SetLength( aPath, 0 );
-  // SetLength( aNewMatrice, 0 );
+  SetLength( aPath, 0 );
+  SetLength( aNewMatrice, 0 );
 end;
 
 procedure TFrmMain.Exercice1;

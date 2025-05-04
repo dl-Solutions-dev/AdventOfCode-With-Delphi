@@ -1,4 +1,4 @@
-# Propositions
+# Day 6
 
 ## <u>Partie 1</u>
 
