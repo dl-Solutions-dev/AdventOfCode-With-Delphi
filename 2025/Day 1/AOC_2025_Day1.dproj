@@ -1,15 +1,15 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{1130F915-01CA-4D40-A52E-B4FF391CB98F}</ProjectGuid>
+        <ProjectGuid>{2B5417CB-FCF6-473D-8B7C-4B20B9CF9332}</ProjectGuid>
         <ProjectVersion>20.3</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Win32</Platform>
-        <ProjectName Condition="'$(ProjectName)'==''">AOC_2024_Day2</ProjectName>
+        <Platform Condition="'$(Platform)'==''">Win64</Platform>
+        <ProjectName Condition="'$(ProjectName)'==''">AOC_2025_Day1</ProjectName>
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Application</AppType>
-        <MainSource>AOC_2024_Day2.dpr</MainSource>
+        <MainSource>AOC_2025_Day1.dpr</MainSource>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -70,10 +70,10 @@
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
         <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
         <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
-        <SanitizedProjectName>AOC_2024_Day2</SanitizedProjectName>
+        <SanitizedProjectName>AOC_2025_Day1</SanitizedProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
-        <DCC_UsePackage>vclwinx;DataSnapServer;FMXfrxTee29;fmx;FMXfrLanguageSlovak29;vclie;DbxCommonDriver;bindengine;IndyIPCommon;VCLRESTComponents;DBXMSSQLDriver;FireDACCommonODBC;emsclient;FMX_FlexCel_Components;FMXfrCoreLibrary29;appanalytics;IndyProtocols;vclx;Skia.Package.RTL;dbxcds;vcledge;FmxTeeUI;VCLTMSFNCChartPkgDXE15;FMXfrLanguageLatvian29;FlexCel_Pdf;FMXfrLanguageUkrainian29;DBXFirebirdDriver;FMXTMSFNCChartPkgDXE15;FMXfrLanguageDutch29;VCLTMSFNCAppToolsPkgDXE15;FireDACSqliteDriver;DbxClientDriver;soapmidas;FMXfsTee29;TeeUI;dbexpress;FMXfrLanguageSwiss29;FMXfrxDBX29;inet;vcltouch;FMX_FlexCel_Core;FireDACDBXDriver;fmxdae;FMXfrLanguageTurkish29;VCL_FlexCel_Core;CustomIPTransport;FireDACMSSQLDriver;FMXfrLanguageBrazil129;FMXfrLanguageCzech29;pkgSDComposants;FMXfsDB29;IndySystem;FMXfsADO29;FMXTMSFNCWebSocketPkgDXE15;FMXfrLanguagePolish29;vclFireDAC;FlexCel_Render;FireDACCommon;DataSnapServerMidas;FireDACODBCDriver;emsserverresource;bindcompdbx;FMXfrLanguageLithuanian29;rtl;FireDACMySQLDriver;FMXfrLanguageGerman29;VCLTMSFNCWXPackPkgDXE15;VCL_FlexCel_Components;DBXSqliteDriver;DBXSybaseASEDriver;FMXTMSFNCBloxPkgDXE15;vclimg;DataSnapFireDAC;FMXfrLanguageBrazil229;inetdbxpress;FireDAC;xmlrtl;FMXTMSFNCWXPackPkgDXE15;dsnap;FireDACDb2Driver;FMXfrLanguageRussian29;DBXOracleDriver;DBXInformixDriver;FMXfrLanguageFrench29;fmxobj;bindcompvclsmp;DataSnapNativeClient;FMXfrLanguageHebrew29;FMXfrLanguageCroatian29;DatasnapConnectorsFreePascal;FMXTMSFNCUIPackPkgDXE15;FMXfrxADO29;FMXfrLanguageBulgarian29;FMXfrxCDS29;FMXTMSFNCAppToolsPkgDXE15;FMXTMSFNCCorePkgDXE15;emshosting;FireDACCommonDriver;IndyIPClient;bindcompvclwinx;FMXfrLanguageArabic29;emsedge;bindcompfmx;inetdb;VCLTMSFNCBloxPkgDXE15;FMXfrLanguageItalian29;FMXfrLanguageSpanish29;FireDACASADriver;Tee;vclactnband;FMXfrxDB29;fmxFireDAC;FireDACInfxDriver;DBXMySQLDriver;FMXfs29;VclSmp;FMXfrxFD29;DataSnapCommon;fmxase;FMXfrLanguageFarsi29;DBXOdbcDriver;FMXfrLanguageTaiwan29;dbrtl;FireDACOracleDriver;Skia.Package.FMX;FMXfrLanguageChinese29;FMXfrLanguagePortuguese29;TeeDB;FlexCel_XlsAdapter;FireDACMSAccDriver;FMXfrLanguageJapanese29;DataSnapIndy10ServerTransport;FMXTMSFNCCloudPackPkgDXE15;DataSnapConnectors;FMXTMSFNCMapsPkgDXE15;vcldsnap;DBXInterBaseDriver;FireDACMongoDBDriver;FireDACTDataDriver;Skia.Package.VCL;VCLTMSFNCGanttChartPkgDXE15;VCLTMSFNCUIPackPkgDXE15;vcldb;VCLTMSFNCDashboardPackPkgDXE15;VCLTMSFNCWebSocketPkgDXE15;FMXfrLanguageCatalon29;FlexCel_Core;FMXfrLanguageHungarian29;bindcomp;inetstn;IndyCore;RESTBackendComponents;FMXfrx29;FireDACADSDriver;RESTComponents;FMXfrLanguageDanish29;IndyIPServer;vcl;dsnapxml;adortl;dsnapcon;DataSnapClient;DataSnapProviderClient;VCLTMSFNCMapsPkgDXE15;FMXfrLanguageSerbian29;FMXfrxe29;FMXfrLanguageSlovene29;LockBoxDR;DBXDb2Driver;FMXfrLanguageIndonesian29;FMXfrLanguageSwedish29;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;FMXTMSFNCGanttChartPkgDXE15;tethering;FMXTMSFNCDashboardPackPkgDXE15;bindcompvcl;FMXfrLanguageBrazil29;CloudService;DBXSybaseASADriver;VCLTMSFNCCloudPackPkgDXE15;FMXfrLanguageGreek29;FMXTee;FMXfrLocalizationLibrary29;VCLTMSFNCCorePkgDXE15;soaprtl;FMXfrLanguageRomanian29;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>FMXfrxDBX37;VCLTMSFNCDashboardPackPkgDXE16;VCLTMSFNCWebSocketPkgDXE16;vclwinx;DataSnapServer;fmx;vclie;DbxCommonDriver;bindengine;IndyIPCommon;VCLRESTComponents;DBXMSSQLDriver;FireDACCommonODBC;emsclient;FMX_FlexCel_Components;IndyProtocols;FMXTMSFNCWXPackPkgDXE16;vclx;Skia.Package.RTL;FMXfsADO37;dbxcds;vcledge;FMXfrLanguageDutch37;FMXfrLanguageRomanian37;FmxTeeUI;FlexCel_Pdf;DBXFirebirdDriver;FMXfrLanguageCatalon37;FireDACSqliteDriver;DbxClientDriver;FMXfsTee37;soapmidas;TeeUI;FMXfrLanguageArabic37;FMXTMSFNCAppToolsPkgDXE16;FMXfrLanguageHungarian37;dbexpress;FMXfrLanguageBrazil37;VCLTMSFNCWXPackPkgDXE16;inet;FMXfrxe37;FMXfrLanguageLatvian37;vcltouch;FMX_FlexCel_Core;FMXfrLanguageUkrainian37;FireDACDBXDriver;fmxdae;VCL_FlexCel_Core;CustomIPTransport;FireDACMSSQLDriver;FMXfrLanguageJapanese37;FMXfrxADO37;pkgSDComposants;FMXfrCoreLibrary37;IndySystem;VCLTMSFNCMapsPkgDXE16;FMXfrLanguageSpanish37;TMSFNCCorePkgDXE16;FMXfrLanguageBulgarian37;vclFireDAC;FlexCel_Render;FireDACCommon;DataSnapServerMidas;FireDACODBCDriver;emsserverresource;FMXTMSFNCDashboardPackPkgDXE16;bindcompdbx;rtl;FireDACMySQLDriver;VCLTMSFNCCorePkgDXE16;VCL_FlexCel_Components;SmartCoreAIVCL;DBXSqliteDriver;VCLTMSFNCGanttChartPkgDXE16;DBXSybaseASEDriver;SmartCoreAIFMX;vclimg;DataSnapFireDAC;inetdbxpress;FireDAC;xmlrtl;dsnap;FireDACDb2Driver;FMXfrxCDS37;DBXOracleDriver;DBXInformixDriver;fmxobj;bindcompvclsmp;DataSnapNativeClient;DatasnapConnectorsFreePascal;FMXfrLanguageIndonesian37;FMXTMSFNCCloudPackPkgDXE16;emshosting;FMXfs37;FMXfrLanguageRussian37;FireDACCommonDriver;FMXfrLanguageBrazil237;FMXfrLanguageItalian37;IndyIPClient;FMXfrLanguageFrench37;bindcompvclwinx;TMSFNCPushNotificationsPkgDXE16;VCLTMSFNCCloudPackPkgDXE16;emsedge;bindcompfmx;FMXfrLanguageSwiss37;inetdb;FireDACASADriver;Tee;FMXfrLanguageSerbian37;vclactnband;FMXfrLanguagePolish37;fmxFireDAC;FMXfsDB37;FireDACInfxDriver;DBXMySQLDriver;VclSmp;DataSnapCommon;FMXTMSFNCWebSocketPkgDXE16;fmxase;FMXfrxFD37;FMXfrLanguageDanish37;FMXfrx37;DBXOdbcDriver;SmartCoreAI;dbrtl;FireDACOracleDriver;Skia.Package.FMX;VCLTMSFNCChartPkgDXE16;TeeDB;FlexCel_XlsAdapter;FireDACMSAccDriver;FMXfrLanguageHebrew37;FMXTMSFNCGanttChartPkgDXE16;FMXfrLanguageBrazil137;DataSnapIndy10ServerTransport;FMXfrLanguageCzech37;FMXTMSFNCCorePkgDXE16;DataSnapConnectors;vcldsnap;DBXInterBaseDriver;DCP_12;FireDACMongoDBDriver;FMXfrLanguageTurkish37;FMXfrxDB37;FireDACTDataDriver;FMXfrLanguageLithuanian37;Skia.Package.VCL;FMXfrLanguageTaiwan37;vcldb;FMXTMSFNCBloxPkgDXE16;FlexCel_Core;VCLTMSFNCBloxPkgDXE16;bindcomp;inetstn;IndyCore;RESTBackendComponents;FMXfrLanguagePortuguese37;FireDACADSDriver;FMXTMSFNCUIPackPkgDXE16;RESTComponents;FMXfrLanguageGreek37;IndyIPServer;vcl;dsnapxml;adortl;dsnapcon;DataSnapClient;DataSnapProviderClient;FMXTMSFNCChartPkgDXE16;FMXfrLanguageCroatian37;FMXfrLanguageSlovak37;VCLTMSFNCAppToolsPkgDXE16;LockBoxDR;FMXfrLanguageSlovene37;FMXfrLanguageSwedish37;DBXDb2Driver;FMXfrLanguageGerman37;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;FMXfrLocalizationLibrary37;FMXfrLanguageChinese37;tethering;FMXTMSFNCMapsPkgDXE16;FMXfrxTee37;bindcompvcl;FMXfrLanguageFarsi37;CloudService;DBXSybaseASADriver;FMXTee;soaprtl;VCLTMSFNCUIPackPkgDXE16;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
@@ -82,7 +82,7 @@
         <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
-        <DCC_UsePackage>vclwinx;DataSnapServer;FMXfrxTee29;fmx;FMXfrLanguageSlovak29;vclie;DbxCommonDriver;bindengine;IndyIPCommon;VCLRESTComponents;DBXMSSQLDriver;FireDACCommonODBC;emsclient;FMX_FlexCel_Components;FMXfrCoreLibrary29;appanalytics;IndyProtocols;vclx;dbxcds;vcledge;FmxTeeUI;VCLTMSFNCChartPkgDXE15;FMXfrLanguageLatvian29;FlexCel_Pdf;FMXfrLanguageUkrainian29;DBXFirebirdDriver;FMXTMSFNCChartPkgDXE15;FMXfrLanguageDutch29;VCLTMSFNCAppToolsPkgDXE15;FireDACSqliteDriver;DbxClientDriver;soapmidas;FMXfsTee29;TeeUI;dbexpress;FMXfrLanguageSwiss29;FMXfrxDBX29;inet;vcltouch;FMX_FlexCel_Core;FireDACDBXDriver;fmxdae;FMXfrLanguageTurkish29;VCL_FlexCel_Core;CustomIPTransport;FireDACMSSQLDriver;FMXfrLanguageBrazil129;FMXfrLanguageCzech29;pkgSDComposants;FMXfsDB29;IndySystem;FMXfsADO29;FMXTMSFNCWebSocketPkgDXE15;FMXfrLanguagePolish29;vclFireDAC;FlexCel_Render;FireDACCommon;DataSnapServerMidas;FireDACODBCDriver;emsserverresource;bindcompdbx;FMXfrLanguageLithuanian29;rtl;FireDACMySQLDriver;FMXfrLanguageGerman29;VCLTMSFNCWXPackPkgDXE15;VCL_FlexCel_Components;DBXSqliteDriver;DBXSybaseASEDriver;FMXTMSFNCBloxPkgDXE15;vclimg;DataSnapFireDAC;FMXfrLanguageBrazil229;inetdbxpress;FireDAC;xmlrtl;FMXTMSFNCWXPackPkgDXE15;dsnap;FireDACDb2Driver;FMXfrLanguageRussian29;DBXOracleDriver;DBXInformixDriver;FMXfrLanguageFrench29;fmxobj;bindcompvclsmp;DataSnapNativeClient;FMXfrLanguageHebrew29;FMXfrLanguageCroatian29;DatasnapConnectorsFreePascal;FMXTMSFNCUIPackPkgDXE15;FMXfrxADO29;FMXfrLanguageBulgarian29;FMXfrxCDS29;FMXTMSFNCAppToolsPkgDXE15;FMXTMSFNCCorePkgDXE15;emshosting;FireDACCommonDriver;IndyIPClient;bindcompvclwinx;FMXfrLanguageArabic29;emsedge;bindcompfmx;inetdb;FMXfrLanguageItalian29;FMXfrLanguageSpanish29;FireDACASADriver;Tee;vclactnband;FMXfrxDB29;fmxFireDAC;FireDACInfxDriver;DBXMySQLDriver;FMXfs29;VclSmp;FMXfrxFD29;DataSnapCommon;fmxase;FMXfrLanguageFarsi29;DBXOdbcDriver;FMXfrLanguageTaiwan29;dbrtl;FireDACOracleDriver;FMXfrLanguageChinese29;FMXfrLanguagePortuguese29;TeeDB;FlexCel_XlsAdapter;FireDACMSAccDriver;FMXfrLanguageJapanese29;DataSnapIndy10ServerTransport;FMXTMSFNCCloudPackPkgDXE15;DataSnapConnectors;FMXTMSFNCMapsPkgDXE15;vcldsnap;DBXInterBaseDriver;FireDACMongoDBDriver;FireDACTDataDriver;Skia.Package.VCL;VCLTMSFNCGanttChartPkgDXE15;VCLTMSFNCUIPackPkgDXE15;vcldb;VCLTMSFNCDashboardPackPkgDXE15;VCLTMSFNCWebSocketPkgDXE15;FMXfrLanguageCatalon29;FlexCel_Core;FMXfrLanguageHungarian29;bindcomp;inetstn;IndyCore;RESTBackendComponents;FMXfrx29;FireDACADSDriver;RESTComponents;FMXfrLanguageDanish29;IndyIPServer;vcl;dsnapxml;adortl;dsnapcon;DataSnapClient;DataSnapProviderClient;VCLTMSFNCMapsPkgDXE15;FMXfrLanguageSerbian29;FMXfrxe29;FMXfrLanguageSlovene29;LockBoxDR;DBXDb2Driver;FMXfrLanguageIndonesian29;FMXfrLanguageSwedish29;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;FMXTMSFNCGanttChartPkgDXE15;tethering;FMXTMSFNCDashboardPackPkgDXE15;bindcompvcl;FMXfrLanguageBrazil29;CloudService;DBXSybaseASADriver;VCLTMSFNCCloudPackPkgDXE15;FMXfrLanguageGreek29;FMXTee;FMXfrLocalizationLibrary29;VCLTMSFNCCorePkgDXE15;soaprtl;FMXfrLanguageRomanian29;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>VCLTMSFNCDashboardPackPkgDXE16;VCLTMSFNCWebSocketPkgDXE16;vclwinx;DataSnapServer;fmx;vclie;DbxCommonDriver;bindengine;IndyIPCommon;VCLRESTComponents;DBXMSSQLDriver;FireDACCommonODBC;emsclient;FMX_FlexCel_Components;IndyProtocols;FMXTMSFNCWXPackPkgDXE16;vclx;dbxcds;vcledge;FMXfrLanguageDutch37;FMXfrLanguageRomanian37;FmxTeeUI;FlexCel_Pdf;DBXFirebirdDriver;FMXfrLanguageCatalon37;FireDACSqliteDriver;DbxClientDriver;soapmidas;TeeUI;FMXfrLanguageArabic37;FMXTMSFNCAppToolsPkgDXE16;FMXfrLanguageHungarian37;dbexpress;FMXfrLanguageBrazil37;VCLTMSFNCWXPackPkgDXE16;inet;FMXfrLanguageLatvian37;vcltouch;FMX_FlexCel_Core;FMXfrLanguageUkrainian37;FireDACDBXDriver;fmxdae;VCL_FlexCel_Core;CustomIPTransport;FireDACMSSQLDriver;FMXfrLanguageJapanese37;pkgSDComposants;IndySystem;VCLTMSFNCMapsPkgDXE16;FMXfrLanguageSpanish37;TMSFNCCorePkgDXE16;FMXfrLanguageBulgarian37;vclFireDAC;FlexCel_Render;FireDACCommon;DataSnapServerMidas;FireDACODBCDriver;emsserverresource;FMXTMSFNCDashboardPackPkgDXE16;bindcompdbx;rtl;FireDACMySQLDriver;VCLTMSFNCCorePkgDXE16;VCL_FlexCel_Components;SmartCoreAIVCL;DBXSqliteDriver;VCLTMSFNCGanttChartPkgDXE16;DBXSybaseASEDriver;SmartCoreAIFMX;vclimg;DataSnapFireDAC;inetdbxpress;FireDAC;xmlrtl;dsnap;FireDACDb2Driver;DBXOracleDriver;DBXInformixDriver;fmxobj;bindcompvclsmp;DataSnapNativeClient;DatasnapConnectorsFreePascal;FMXfrLanguageIndonesian37;FMXTMSFNCCloudPackPkgDXE16;emshosting;FMXfrLanguageRussian37;FireDACCommonDriver;FMXfrLanguageBrazil237;FMXfrLanguageItalian37;IndyIPClient;FMXfrLanguageFrench37;bindcompvclwinx;TMSFNCPushNotificationsPkgDXE16;VCLTMSFNCCloudPackPkgDXE16;emsedge;bindcompfmx;FMXfrLanguageSwiss37;inetdb;FireDACASADriver;Tee;FMXfrLanguageSerbian37;vclactnband;FMXfrLanguagePolish37;fmxFireDAC;FireDACInfxDriver;DBXMySQLDriver;VclSmp;DataSnapCommon;FMXTMSFNCWebSocketPkgDXE16;fmxase;FMXfrLanguageDanish37;DBXOdbcDriver;SmartCoreAI;dbrtl;FireDACOracleDriver;VCLTMSFNCChartPkgDXE16;TeeDB;FlexCel_XlsAdapter;FireDACMSAccDriver;FMXfrLanguageHebrew37;FMXTMSFNCGanttChartPkgDXE16;FMXfrLanguageBrazil137;DataSnapIndy10ServerTransport;FMXfrLanguageCzech37;FMXTMSFNCCorePkgDXE16;DataSnapConnectors;vcldsnap;DBXInterBaseDriver;FireDACMongoDBDriver;FMXfrLanguageTurkish37;FireDACTDataDriver;FMXfrLanguageLithuanian37;Skia.Package.VCL;FMXfrLanguageTaiwan37;vcldb;FMXTMSFNCBloxPkgDXE16;FlexCel_Core;VCLTMSFNCBloxPkgDXE16;bindcomp;inetstn;IndyCore;RESTBackendComponents;FMXfrLanguagePortuguese37;FireDACADSDriver;FMXTMSFNCUIPackPkgDXE16;RESTComponents;FMXfrLanguageGreek37;IndyIPServer;vcl;dsnapxml;adortl;dsnapcon;DataSnapClient;DataSnapProviderClient;FMXTMSFNCChartPkgDXE16;FMXfrLanguageCroatian37;FMXfrLanguageSlovak37;VCLTMSFNCAppToolsPkgDXE16;LockBoxDR;FMXfrLanguageSlovene37;FMXfrLanguageSwedish37;DBXDb2Driver;FMXfrLanguageGerman37;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;FMXfrLanguageChinese37;tethering;FMXTMSFNCMapsPkgDXE16;bindcompvcl;FMXfrLanguageFarsi37;CloudService;DBXSybaseASADriver;FMXTee;soaprtl;VCLTMSFNCUIPackPkgDXE16;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
@@ -106,6 +106,9 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <DCC_UnitSearchPath>C:\Users\danyleblanc\Documents\DL-Projets\Communs\Base;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -127,6 +130,7 @@
             <Form>FrmMain</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <None Include="ReadMe.md"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -145,13 +149,37 @@
         <BorlandProject>
             <Delphi.Personality>
                 <Source>
-                    <Source Name="MainSource">AOC_2024_Day2.dpr</Source>
+                    <Source Name="MainSource">AOC_2025_Day1.dpr</Source>
                 </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k370.bpl">Composants Microsoft Office 2000 Sample Automation Server Wrapper</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp370.bpl">Composants Microsoft Office XP Sample Automation Server Wrapper</Excluded_Packages>
+                </Excluded_Packages>
+                <WelcomePageFile Path="ReadMe.md"/>
+                <WelcomePageFolder/>
             </Delphi.Personality>
             <Deployment Version="5">
-                <DeployFile LocalName="Win32\Debug\AOC_2024_Day2.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="Untitled1.md" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win64">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Win32\Debug\AOC_2025_Day1.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
-                        <RemoteName>AOC_2024_Day2.exe</RemoteName>
+                        <RemoteName>AOC_2025_Day1.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Win64\Debug\AOC_2025_Day1.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win64">
+                        <RemoteName>AOC_2025_Day1.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Win64\Debug\AOC_2025_Day1.rsm" Configuration="Debug" Class="DebugSymbols">
+                    <Platform Name="Win64">
+                        <RemoteName>AOC_2025_Day1.rsm</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

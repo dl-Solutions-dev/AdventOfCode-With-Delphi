@@ -67,12 +67,8 @@ object FrmMain: TFrmMain
     Font.Height = -12
     Font.Name = 'Courier New'
     Font.Style = []
-    Lines.Strings = (
-      'Memo1')
     ParentFont = False
     ScrollBars = ssVertical
     TabOrder = 5
-    ExplicitWidth = 231
-    ExplicitHeight = 271
   end
 end

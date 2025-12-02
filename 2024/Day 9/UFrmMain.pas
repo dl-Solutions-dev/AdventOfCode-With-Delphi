@@ -34,7 +34,7 @@ type
 
     function GetInputFileName: string;
     function CreateMap( aDisk: string ): TArray< Integer >;
-    function MoveBlock( aSize, aFileId, aPos: Integer ): Boolean;
+    function MoveBlock( aSize, aFileId, aPos: Integer; out aPosFin: Integer ): Boolean;
 
     procedure Exercice1;
     procedure Exercice2;
@@ -54,7 +54,8 @@ implementation
 uses
   System.IOUtils,
   System.StrUtils,
-  System.Math;
+  System.Math,
+  Communs.Helpers;
 
 const
   FILENAME: string = '.\input.txt';
@@ -142,11 +143,10 @@ end;
 
 procedure TFrmMain.DefragmenterMieux;
 var
-  LCurRight, LMFile, LSize, LEnd: Integer;
+  LCurRight, LMFile, LSize, LEnd, LPosFin: Integer;
+  LFileMoved: TArray< Integer >;
 begin
   LCurRight := High( FMap );
-
-//  LogMap;
 
   while ( LCurRight > 0 ) do
   begin
@@ -156,23 +156,32 @@ begin
     end;
 
     LMFile := FMap[ LCurRight ];
-    LEnd := LCurRight;
-    LSize := 0;
-    while ( LCurRight > 0 ) and ( FMap[ LCurRight ] = LMFile ) do
+    if ( TArray.IndexOf< Integer >( LFileMoved, LMFile ) = -1 ) then
     begin
-      inc( LSize );
+      LEnd := LCurRight;
+      LSize := 0;
+      while ( LCurRight > 0 ) and ( FMap[ LCurRight ] = LMFile ) do
+      begin
+        inc( LSize );
+        Dec( LCurRight );
+      end;
+
+      if MoveBlock( LSize, LMFile, LCurRight, LPosFin ) then
+      begin
+        TArray.Add< Integer >( LFileMoved, LMFile );
+
+        for var i := LCurRight + 1 to LEnd do
+        begin
+          FMap[ i ] := -1;
+        end;
+      end;
+    end
+    else
+    begin
       Dec( LCurRight );
     end;
 
-    if MoveBlock( LSize, LMFile, LCurRight ) then
-    begin
-      for var i := LCurRight + 1 to LEnd do
-      begin
-        FMap[ i ] := -1;
-      end;
-    end;
-
-//    LogMap;
+    //LogMap;
   end;
 end;
 
@@ -202,18 +211,20 @@ begin
   Edt1.CopyToClipboard;
 end;
 
-//TODO: à revoir, trop long et ne fonctione peut-être même pas
+// TODO: à revoir, trop long et ne fonctione peut-être même pas
 procedure TFrmMain.Exercice2;
 var
   LTotal: Int64;
 begin
   LoadFile;
 
- // MmoLogs.clear;
+  // MmoLogs.clear;
 
   FMap := CreateMap( FFile[ 0 ] );
 
   DefragmenterMieux;
+
+  LogMap;
 
   LTotal := 0;
 
@@ -269,7 +280,7 @@ begin
   MmoLogs.Lines.Add( LMap );
 end;
 
-function TFrmMain.MoveBlock( aSize, aFileId, aPos: Integer ): Boolean;
+function TFrmMain.MoveBlock( aSize, aFileId, aPos: Integer; out aPosFin: Integer ): Boolean;
 var
   LDestBegin, LBegin, LPlace, LInc: Integer;
 
@@ -304,6 +315,8 @@ begin
         begin
           FMap[ i ] := aFileId;
         end;
+
+        aPosFin := LBegin + aSize;
 
         Exit( True );
       end;

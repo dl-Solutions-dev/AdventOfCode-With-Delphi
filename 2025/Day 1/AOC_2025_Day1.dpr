@@ -1,9 +1,8 @@
-program AOC_2024_Day9;
+program AOC_2025_Day1;
 
 uses
   Vcl.Forms,
-  UFrmMain in 'UFrmMain.pas' {FrmMain},
-  Communs.Helpers in '..\..\..\Communs\Base\Communs.Helpers.pas';
+  UFrmMain in 'UFrmMain.pas' {FrmMain};
 
 {$R *.res}
 

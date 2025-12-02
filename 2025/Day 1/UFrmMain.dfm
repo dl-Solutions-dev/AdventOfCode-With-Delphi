@@ -59,7 +59,7 @@ object FrmMain: TFrmMain
   object MmoLogs: TMemo
     Left = 8
     Top = 160
-    Width = 241
+    Width = 231
     Height = 303
     Anchors = [akLeft, akTop, akRight, akBottom]
     Font.Charset = DEFAULT_CHARSET
@@ -67,12 +67,10 @@ object FrmMain: TFrmMain
     Font.Height = -12
     Font.Name = 'Courier New'
     Font.Style = []
-    Lines.Strings = (
-      'Memo1')
     ParentFont = False
     ScrollBars = ssVertical
     TabOrder = 5
-    ExplicitWidth = 231
+    ExplicitWidth = 221
     ExplicitHeight = 271
   end
 end
