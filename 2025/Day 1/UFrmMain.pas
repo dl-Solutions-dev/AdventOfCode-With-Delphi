@@ -24,20 +24,18 @@ type
     BtnExercice2: TButton;
     ChkTests: TCheckBox;
     MmoLogs: TMemo;
+
     procedure BtnExercice1Click( Sender: TObject );
     procedure BtnExercice2Click( Sender: TObject );
   private
     { Déclarations privées }
     FFile: TArray<string>;
-    FMatrix: TArray<TArray<string>>;
 
     function GetInputFileName: string;
 
     procedure Exercice1;
     procedure Exercice2;
     procedure LoadFile;
-    procedure LoadMatrix;
-    procedure Exercice21;
   public
     { Déclarations publiques }
   end;
@@ -182,19 +180,6 @@ end;
 procedure TFrmMain.LoadFile;
 begin
   FFile := TFile.ReadAllLines( GetInputFileName );
-end;
-
-procedure TFrmMain.LoadMatrix;
-begin
-  SetLength( FMatrix, Length( FFile ), Length( FFile[ 0 ] ) );
-
-  for var i := 0 to High( FFile ) do
-  begin
-    for var j := 1 to Length( FFile[ i ] ) do
-    begin
-      FMatrix[ i, j - 1 ] := FFile[ i, j ];
-    end;
-  end;
 end;
 
 end.
