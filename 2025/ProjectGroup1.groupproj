@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{B72BD701-43EE-4DE5-B3AF-954B97ED7624}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Day 1\AOC_2025_Day1.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Day 2\AOC_2025_Day2.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="AOC_2025_Day1">
+        <MSBuild Projects="Day 1\AOC_2025_Day1.dproj"/>
+    </Target>
+    <Target Name="AOC_2025_Day1:Clean">
+        <MSBuild Projects="Day 1\AOC_2025_Day1.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AOC_2025_Day1:Make">
+        <MSBuild Projects="Day 1\AOC_2025_Day1.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AOC_2025_Day2">
+        <MSBuild Projects="Day 2\AOC_2025_Day2.dproj"/>
+    </Target>
+    <Target Name="AOC_2025_Day2:Clean">
+        <MSBuild Projects="Day 2\AOC_2025_Day2.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AOC_2025_Day2:Make">
+        <MSBuild Projects="Day 2\AOC_2025_Day2.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="AOC_2025_Day1;AOC_2025_Day2"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="AOC_2025_Day1:Clean;AOC_2025_Day2:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="AOC_2025_Day1:Make;AOC_2025_Day2:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
