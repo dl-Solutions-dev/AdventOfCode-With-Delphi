@@ -1,15 +1,15 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{D73D7C45-C51E-4BC9-91D8-4515FF0CAAE5}</ProjectGuid>
+        <ProjectGuid>{85281B30-5E72-4051-9796-C5257575656B}</ProjectGuid>
         <ProjectVersion>20.3</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win64</Platform>
-        <ProjectName Condition="'$(ProjectName)'==''">AOC_2025_Day3</ProjectName>
+        <ProjectName Condition="'$(ProjectName)'==''">AOC_2025_Day5</ProjectName>
         <TargetedPlatforms>3</TargetedPlatforms>
         <AppType>Application</AppType>
-        <MainSource>AOC_2025_Day3.dpr</MainSource>
+        <MainSource>AOC_2025_Day5.dpr</MainSource>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -70,7 +70,7 @@
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
         <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
         <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
-        <SanitizedProjectName>AOC_2025_Day3</SanitizedProjectName>
+        <SanitizedProjectName>AOC_2025_Day5</SanitizedProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_UsePackage>FMXfrxDBX37;VCLTMSFNCDashboardPackPkgDXE16;VCLTMSFNCWebSocketPkgDXE16;vclwinx;DataSnapServer;fmx;vclie;DbxCommonDriver;bindengine;IndyIPCommon;VCLRESTComponents;DBXMSSQLDriver;FireDACCommonODBC;emsclient;FMX_FlexCel_Components;IndyProtocols;FMXTMSFNCWXPackPkgDXE16;vclx;Skia.Package.RTL;FMXfsADO37;dbxcds;vcledge;FMXfrLanguageDutch37;FMXfrLanguageRomanian37;FmxTeeUI;FlexCel_Pdf;DBXFirebirdDriver;FMXfrLanguageCatalon37;FireDACSqliteDriver;DbxClientDriver;FMXfsTee37;soapmidas;TeeUI;FMXfrLanguageArabic37;FMXTMSFNCAppToolsPkgDXE16;FMXfrLanguageHungarian37;dbexpress;FMXfrLanguageBrazil37;VCLTMSFNCWXPackPkgDXE16;inet;FMXfrxe37;FMXfrLanguageLatvian37;vcltouch;FMX_FlexCel_Core;FMXfrLanguageUkrainian37;FireDACDBXDriver;fmxdae;VCL_FlexCel_Core;CustomIPTransport;FireDACMSSQLDriver;FMXfrLanguageJapanese37;FMXfrxADO37;pkgSDComposants;FMXfrCoreLibrary37;IndySystem;VCLTMSFNCMapsPkgDXE16;FMXfrLanguageSpanish37;TMSFNCCorePkgDXE16;FMXfrLanguageBulgarian37;vclFireDAC;FlexCel_Render;FireDACCommon;DataSnapServerMidas;FireDACODBCDriver;emsserverresource;FMXTMSFNCDashboardPackPkgDXE16;bindcompdbx;rtl;FireDACMySQLDriver;VCLTMSFNCCorePkgDXE16;VCL_FlexCel_Components;SmartCoreAIVCL;DBXSqliteDriver;VCLTMSFNCGanttChartPkgDXE16;DBXSybaseASEDriver;SmartCoreAIFMX;vclimg;DataSnapFireDAC;inetdbxpress;FireDAC;xmlrtl;dsnap;FireDACDb2Driver;FMXfrxCDS37;DBXOracleDriver;DBXInformixDriver;fmxobj;bindcompvclsmp;DataSnapNativeClient;DatasnapConnectorsFreePascal;FMXfrLanguageIndonesian37;FMXTMSFNCCloudPackPkgDXE16;emshosting;FMXfs37;FMXfrLanguageRussian37;FireDACCommonDriver;FMXfrLanguageBrazil237;FMXfrLanguageItalian37;IndyIPClient;FMXfrLanguageFrench37;bindcompvclwinx;TMSFNCPushNotificationsPkgDXE16;VCLTMSFNCCloudPackPkgDXE16;emsedge;bindcompfmx;FMXfrLanguageSwiss37;inetdb;FireDACASADriver;Tee;FMXfrLanguageSerbian37;vclactnband;FMXfrLanguagePolish37;fmxFireDAC;FMXfsDB37;FireDACInfxDriver;DBXMySQLDriver;VclSmp;DataSnapCommon;FMXTMSFNCWebSocketPkgDXE16;fmxase;FMXfrxFD37;FMXfrLanguageDanish37;FMXfrx37;DBXOdbcDriver;SmartCoreAI;dbrtl;FireDACOracleDriver;Skia.Package.FMX;VCLTMSFNCChartPkgDXE16;TeeDB;FlexCel_XlsAdapter;FireDACMSAccDriver;FMXfrLanguageHebrew37;FMXTMSFNCGanttChartPkgDXE16;FMXfrLanguageBrazil137;DataSnapIndy10ServerTransport;FMXfrLanguageCzech37;FMXTMSFNCCorePkgDXE16;DataSnapConnectors;vcldsnap;DBXInterBaseDriver;DCP_12;FireDACMongoDBDriver;FMXfrLanguageTurkish37;FMXfrxDB37;FireDACTDataDriver;FMXfrLanguageLithuanian37;Skia.Package.VCL;FMXfrLanguageTaiwan37;vcldb;FMXTMSFNCBloxPkgDXE16;FlexCel_Core;VCLTMSFNCBloxPkgDXE16;bindcomp;inetstn;IndyCore;RESTBackendComponents;FMXfrLanguagePortuguese37;FireDACADSDriver;FMXTMSFNCUIPackPkgDXE16;RESTComponents;FMXfrLanguageGreek37;IndyIPServer;vcl;dsnapxml;adortl;dsnapcon;DataSnapClient;DataSnapProviderClient;FMXTMSFNCChartPkgDXE16;FMXfrLanguageCroatian37;FMXfrLanguageSlovak37;VCLTMSFNCAppToolsPkgDXE16;LockBoxDR;FMXfrLanguageSlovene37;FMXfrLanguageSwedish37;DBXDb2Driver;FMXfrLanguageGerman37;emsclientfiredac;FireDACPgDriver;FireDACDSDriver;FMXfrLocalizationLibrary37;FMXfrLanguageChinese37;tethering;FMXTMSFNCMapsPkgDXE16;FMXfrxTee37;bindcompvcl;FMXfrLanguageFarsi37;CloudService;DBXSybaseASADriver;FMXTee;soaprtl;VCLTMSFNCUIPackPkgDXE16;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
@@ -106,6 +106,9 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
+        <DCC_UnitSearchPath>C:\Users\danyleblanc\Documents\DL-Projets\Communs\Base;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -146,10 +149,14 @@
         <BorlandProject>
             <Delphi.Personality>
                 <Source>
-                    <Source Name="MainSource">AOC_2025_Day3.dpr</Source>
+                    <Source Name="MainSource">AOC_2025_Day5.dpr</Source>
                 </Source>
                 <WelcomePageFile Path="ReadMe.md"/>
                 <WelcomePageFolder/>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k370.bpl">Composants Microsoft Office 2000 Sample Automation Server Wrapper</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp370.bpl">Composants Microsoft Office XP Sample Automation Server Wrapper</Excluded_Packages>
+                </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="5">
                 <DeployFile LocalName="Untitled1.md" Configuration="Debug" Class="ProjectFile">
@@ -158,21 +165,21 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="Win32\Debug\AOC_2025_Day3.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="Win32\Debug\AOC_2025_Day5.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
-                        <RemoteName>AOC_2025_Day3.exe</RemoteName>
+                        <RemoteName>AOC_2025_Day5.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="Win64\Debug\AOC_2025_Day3.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="Win64\Debug\AOC_2025_Day5.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win64">
-                        <RemoteName>AOC_2025_Day3.exe</RemoteName>
+                        <RemoteName>AOC_2025_Day5.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="Win64\Debug\AOC_2025_Day3.rsm" Configuration="Debug" Class="DebugSymbols">
+                <DeployFile LocalName="Win64\Debug\AOC_2025_Day5.rsm" Configuration="Debug" Class="DebugSymbols">
                     <Platform Name="Win64">
-                        <RemoteName>AOC_2025_Day3.rsm</RemoteName>
+                        <RemoteName>AOC_2025_Day5.rsm</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
